@@ -9,11 +9,129 @@ published: true
     <title>{{ site.name }}</title>
     <meta name="keywords" value="{{ site.meta_keywords }}" />
     <meta name="description" value="{{ site.meta_description }}" />
+    {{ 'jquery-1.11.3.min.js' | javascript_tag }}
+    {{ 'script.js' | javascript_tag }}
+    {{ 'styles.css' | stylesheet_tag: 'screen, projection' }}
   </head>
   <body>
-    <h1>{{ page.title }}</h1>
-    {% block 'main' %}
-    <p>Lorem ipsum....</p>
-    {% endblock %}
+    <div class="header">
+      <div class="container">
+        <div class="top-line">
+          <a href="/" class="logo">{{ 'logo.png' | theme_image_tag }}</a>
+          <div class="right">
+            <div class="phone">8-920-472-17-75</div>
+            <div class="actions">
+              <button class="callback button-any">Заказать обратный звонок</button>
+            </div>
+          </div>
+        </div>
+        <div class="menu-container">
+          <ul class="menu">
+            <li class="menu-item">
+              <a class="menu-item-link" href="">О нас</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-item-link" href="">Услуги</a>
+              <ul class="submenu">
+                <li class="submenu-item">
+                  <a href="">Один или несколько аниматоров на праздник</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">Гелиевые и воздушные шары</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">Оформление сладкого стола и шоколадного фонтана</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">Написание индивидуального сценария праздника</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">Шоу мыльных пузырей</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">Фото и видеосъемка праздника</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">Баннер с именем именинника</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">Аквагрим</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a class="menu-item-link" href="">Организация праздников</a>
+              <ul class="submenu">
+                <li class="submenu-item">
+                  <a href="">День Рождения</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">Новый Год</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">Выпускной в детском саду или школе</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">1 сентября</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">Уличные и тематические праздники</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a class="menu-item-link" href="">Анимационные программы</a>
+              <ul class="submenu">
+                <li class="submenu-item">
+                  <a href="">Фиксики</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">Барбоскины</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">Феи WINX</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">Дед Мороз и Снегурочка</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">Пираты</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">Ковбои</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">Клоуны</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">Гавайская вечеринка</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">Шпионская вечеринка</a>
+                </li>
+                <li class="submenu-item">
+                  <a href="">Машенька</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a class="menu-item-link" href="">Фотогалерея</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-item-link" href="">Контакты</a>
+            </li>
+          </ul>
+        </div>
+        <div class="slider-container">
+          <div class="slider">
+            <h1>ОРГАНИЗАЦИЯ ДЕТСКИХ ПРАЗДНИКОВ</h1>
+            <h2>Дети веселятся, родители отдыхают</h2>
+            <p>
+              Предлагаем организацию и проведение<br/>детских праздников для детей<br/>с года до 12 лет
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
