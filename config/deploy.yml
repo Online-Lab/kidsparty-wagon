@@ -8,8 +8,6 @@
 #   email: john@doe.net
 #   password: apassword
 #   # api_key: <your api key here>
-# production:
-#   host: www.example.com
-#   email: john@doe.net
-#   password: apassword
-#   # api_key: <your api key here>
+production:
+  host: kidspartytambov.ru
+  api_key: 57b6e6bb471538505df585f0a3932e6a8c31790d
