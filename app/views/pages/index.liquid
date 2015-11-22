@@ -14,6 +14,7 @@ published: true
     {{ 'styles.css' | stylesheet_tag: 'screen, projection' }}
   </head>
   <body>
+    <div class="header-container">
     <div class="header">
       <div class="container">
         <div class="top-line">
@@ -131,6 +132,132 @@ published: true
             </p>
           </div>
         </div>
+      </div>
+      <div class="wave-bottom">&nbsp;</div>
+    </div>
+    </div>
+    <div class="offers-container">
+      <div class="container">
+        <h1>МЫ МОЖЕМ ВАМ ПРЕДЛОЖИТЬ</h1>
+        <ul class="offer-items">
+          <li>
+            {{ 'offer-1.png' | theme_image_tag }}
+            <p class="color-green">аниматоры</p>
+            <button class="button-any">Подробнее</button>
+          </li><li>
+            {{ 'offer-2.png' | theme_image_tag }}
+            <p class="color-green">шар-сюрприз</p>
+            <button class="button-any">Подробнее</button>
+          </li><li>
+            {{ 'offer-3.png' | theme_image_tag }}
+            <p class="color-green">художественный аквагрим</p>
+            <button class="button-any">Подробнее</button>
+          </li><li>
+            {{ 'offer-4.png' | theme_image_tag }}
+            <p class="color-green">сладкий стол</p>
+            <button class="button-any">Подробнее</button>
+          </li><li>
+            {{ 'offer-5.png' | theme_image_tag }}
+            <p class="color-green">шоу мыльных пузырей</p>
+            <button class="button-any">Подробнее</button>
+          </li><li>
+            {{ 'offer-6.png' | theme_image_tag }}
+            <p class="color-green">дискотека</p>
+            <button class="button-any">Подробнее</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="order-container">
+      <div class="wave-top">&nbsp;</div>
+      <div class="container">
+        <p class="description">При написании сценария мы опираемся на интересы и<br/>желания ребенка, учитываем психологические особенности возраста</p>
+        <div class="slider-container">
+          <div class="slider">
+            <h1>ОРГАНИЗАЦИЯ ДЕТСКИХ ПРАЗДНИКОВ</h1>
+            <h2>Дети веселятся, родители отдыхают</h2>
+            <p>
+              Предлагаем организацию и проведение<br/>детских праздников для детей<br/>с года до 12 лет
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="wave-bottom">&nbsp;</div>
+    </div>
+    <div class="photogallery-container">
+      <div class="container">
+        <h1>ФОТОГАЛЕРЕЯ</h1>
+        <div class="left-slider-button">
+          <a href="">
+            {{ 'left-slider.png' | theme_image_tag }}
+          </a>
+        </div><div class="slider-container">
+          <ul class="slider">
+            <li>
+              <a href="/"><img src=""/></a>
+            </li><li>
+              <a href="/"><img src=""/></a>
+            </li><li>
+              <a href="/"><img src=""/></a>
+            </li><li>
+              <a href="/"><img src=""/></a>
+            </li><li>
+              <a href="/"><img src=""/></a>
+            </li>
+          </ul>
+        </div><div class="right-slider-button">
+          <a href="">
+            {{ 'right-slider.png' | theme_image_tag }}
+          </a>
+        </div>
+        <div class="see-all">
+          <button class="button-any">Смотреть все фотографии</button>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials-container">
+      <div class="wave-top">&nbsp;</div>
+      <div class="container">
+        <div class="quotes-left">
+          {{ 'quotes-left.png' | theme_image_tag }}
+        </div>
+        <div class="testimonial-container">
+          <div class="photo">
+            <img src=""/>
+          </div>
+          <div class="name">
+            Анна
+          </div>
+          <div class="message">
+            отзыв, отзыв, отзыв, отзыв, отзыв, отзыв, отзыв
+          </div>
+          <button class="button-any">Все отзывы</button>
+        </div>
+        <div class="quotes-right">
+          {{ 'quotes-right.png' | theme_image_tag }}
+        </div>
+      </div>
+      <div class="wave-bottom-red">&nbsp;</div>
+    </div>
+    <div class="footer-container">
+      <div class="container">
+        <ul class="footer-menu">
+          <li>
+            <a href="">п.меню</a>
+          </li><li>
+            <a href="">анимационная программа</a>
+          </li><li>
+            <a href="">анимационная программа</a>
+          </li><li>
+            <a href="">анимационная программа</a>
+          </li><li>
+            <a href="">анимационная программа</a>
+          </li>
+        </ul>
+        <a class="footer-logo" href="/">
+          {{ 'footer-logo.png' | theme_image_tag }}
+          <span class="phone">8 905 122 22 66</span>
+        </a>
       </div>
     </div>
   </body>
