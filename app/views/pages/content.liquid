@@ -1,0 +1,39 @@
+---
+title: content
+slug: content
+is_layout: false
+allow_layout: false
+redirect_url: "/"
+redirect_type: 301
+listed: true
+published: true
+cache_strategy: none
+response_type: text/html
+position: 0
+editable_elements:
+  body/content: ''
+---
+{% extends 'parent' %}
+{% block 'body' %}
+    <div class="header-container content-page">
+    <div class="header">
+      <div class="container">
+        {% include 'topline' %}
+        {% nav 'content', depth: 2, exclude: nil, icon: false %}
+      </div>
+      <div class="wave-bottom">&nbsp;</div>
+    </div>
+    </div>
+
+    <div class="page-content-container">
+      <div class="container">
+      	<h1>{{ page.title }}</h1>
+      	{% editable_text "content", rows: 20 %}
+      	page content
+      	{% endeditable_text %}
+      </div>
+    </div>
+
+    {% include 'footer' %}
+    {% include 'popups' %}
+{% endblock %}
