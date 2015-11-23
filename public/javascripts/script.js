@@ -41,7 +41,7 @@ $(document).ready(function(){
     });
   });
 
-  $(".popup-callme").submit(function(e){
+  $(".popup-callme form").submit(function(e){
     var phoneInput = $(this).find("#content-phone");
     var val = phoneInput.val();
     if (!val) {
@@ -51,11 +51,38 @@ $(document).ready(function(){
       });
     }
   });
+  $(".order-container form").submit(function(e){
+    var phoneInput = $(this).find("#content-phone");
+    var nameInput = $(this).find("#content-name");
+    var valPhone = phoneInput.val();
+    var valName = nameInput.val();
+    if (!valName) {
+      e.preventDefault();
+      return setTimeout(function(){
+        nameInput.focus();
+      });
+    }
+    if (!valPhone) {
+      e.preventDefault();
+      return setTimeout(function(){
+        phoneInput.focus();
+      });
+    }
+  });
 
   var hash = window.location.search;
   setTimeout(function(){
     if (hash.indexOf('callorder-success') > -1){
       showPopup($(".popup-callme-success"));
+    }
+    if (hash.indexOf('callorder-error') > -1){
+      showPopup($(".popup-callme-error"));
+    }
+    if (hash.indexOf('onlineorder-success') > -1){
+      showPopup($(".popup-callme-success"));
+    }
+    if (hash.indexOf('onlineorder-error') > -1){
+      showPopup($(".popup-callme-error"));
     }
   }, 500);
 
