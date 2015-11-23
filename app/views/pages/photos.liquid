@@ -1,0 +1,40 @@
+---
+title: "Фотогалерея"
+slug: photos
+is_layout: false
+allow_layout: false
+listed: false
+published: true
+cache_strategy: none
+response_type: text/html
+position: 3
+---
+{% extends 'parent' %}
+{% block 'body' %}
+    <div class="header-container content-page">
+    <div class="header">
+      <div class="container">
+        {% include 'topline' %}
+        {% nav 'content', depth: 2, exclude: nil, icon: false %}
+      </div>
+      <div class="wave-bottom">&nbsp;</div>
+    </div>
+    </div>
+
+    <div class="page-content-container photos-container">
+      <div class="container">
+      	<h1>Фотолалерея</h1>
+          <ul class="slider">
+            {% for item in contents.photos %}<li>
+              <a class='highslide' href='{{ item.photo.url }}' onclick="return hs.expand(this, {slideshowGroup: 'main'})">
+                <img src="{{ item.photo.url | resize: 'x120'  }}"/>
+              </a>
+            </li>{% endfor %}
+          </ul>
+
+      </div>
+    </div>
+
+    {% include 'footer' %}
+    {% include 'popups' %}
+{% endblock %}

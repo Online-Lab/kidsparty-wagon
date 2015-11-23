@@ -1,0 +1,13 @@
+---
+name: Photos
+slug: photos
+label_field_name: photo
+order_by: created_at
+order_direction: asc
+fields:
+- photo:
+    label: photo
+    type: file
+    required: true
+    unique: false
+    localized: false

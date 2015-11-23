@@ -3,3 +3,8 @@
     _slug: ievghienii-khashin
     message: "<p>Отличная фирма! Советую!</p>"
     photo: "/samples/testimonials/ievghienii-khashin/offer-6.png"
+- "Лидия Хашина":
+    _slug: lidiia-khashina
+    message: "<p>это мой отзыв. надо обязательно воспользоваться услугами</p>\r\n<p>говорят,
+      что все отлично!</p>"
+    photo: "/samples/testimonials/lidiia-khashina/offer-4.png"

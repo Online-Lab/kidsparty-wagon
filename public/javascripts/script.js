@@ -70,6 +70,22 @@ $(document).ready(function(){
     }
   });
 
+  var $slider = $(".photogallery-container .slider");
+  var current = 1;
+  var slidesCount = $slider.find("li").length;
+  $(".left-slider-button").click(function(e){
+    e.preventDefault();
+    if (current == 1) return;
+    current -= 1;
+    $slider.animate({left: "+=200"});
+  });
+  $(".right-slider-button").click(function(e){
+    e.preventDefault();
+    if (current == slidesCount - 4) return;
+    current += 1;
+    $slider.animate({left: "-=200"});
+  });
+
   var hash = window.location.search;
   setTimeout(function(){
     if (hash.indexOf('callorder-success') > -1){

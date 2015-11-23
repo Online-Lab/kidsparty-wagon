@@ -7,6 +7,17 @@ published: true
 cache_strategy: none
 response_type: text/html
 position: 0
+editable_elements:
+  body/title1: "ОРГАНИЗАЦИЯ ДЕТСКИХ ПРАЗДНИКОВ"
+  body/title2: "Дети веселятся, родители отдыхают"
+  body/title3: "Предлагаем организацию и проведение<br/>детских праздников для детей<br/>с
+    года до 12 лет"
+  body/offers_title: "МЫ МОЖЕМ ВАМ ПРЕДЛОЖИТЬ"
+  body/order_description: "При написании сценария мы опираемся на интересы и<br/>желания
+    ребенка, учитываем психологические особенности возраста"
+  body/order_title1: "Сделайте заявку на праздник"
+  body/order_title2: "прямо сейчас"
+  body/photogallery_title: "ФОТОГАЛЕРЕЯ"
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -23,9 +34,41 @@ position: 0
     <meta name="keywords" value="{{ site.meta_keywords }}" />
     <meta name="description" value="{{ site.meta_description }}" />
     {{ 'jquery-1.11.3.min.js' | javascript_tag }}
+    {{ 'highslide-full.js' | javascript_tag }}
     {{ 'script.js' | javascript_tag }}
     {{ 'styles.css' | stylesheet_tag: 'screen, projection' }}
+    {{ 'highslide.css' | stylesheet_tag }}
     {% inline_editor %}
+
+<script type="text/javascript">
+  hs.graphicsDir = "{{ 'highslide' | theme_image_url }}/";
+  hs.align = 'center';
+  hs.transitions = ['expand', 'crossfade'];
+  hs.fadeInOut = true;
+  hs.dimmingOpacity = 0.8;
+  hs.captionEval = 'this.thumb.alt';
+  hs.marginBottom = 105; // make room for the thumbstrip and the controls
+  hs.numberPosition = 'caption';
+  // Add the slideshow providing the controlbar and the thumbstrip
+  hs.addSlideshow({
+    //slideshowGroup: 'group1',
+    interval: 5000,
+    repeat: false,
+    useControls: true,
+    overlayOptions: {
+      className: 'text-controls',
+      position: 'bottom center',
+      relativeTo: 'viewport',
+      offsetY: -60
+    },
+    thumbstrip: {
+      position: 'bottom center',
+      mode: 'horizontal',
+      relativeTo: 'viewport'
+    }
+  });
+</script>
+
   </head>
   <body>
 {% block 'body' %}
@@ -90,17 +133,11 @@ position: 0
           </a>
         </div><div class="slider-container">
           <ul class="slider">
-            <li>
-              <a href="/"><img src=""/></a>
-            </li><li>
-              <a href="/"><img src=""/></a>
-            </li><li>
-              <a href="/"><img src=""/></a>
-            </li><li>
-              <a href="/"><img src=""/></a>
-            </li><li>
-              <a href="/"><img src=""/></a>
-            </li>
+            {% for item in contents.photos %}<li>
+              <a class='highslide' href='{{ item.photo.url }}' onclick="return hs.expand(this, {slideshowGroup: 'main'})">
+                <img src="{{ item.photo.url | resize: 'x120'  }}"/>
+              </a>
+            </li>{% endfor %}
           </ul>
         </div><div class="right-slider-button">
           <a href="">
@@ -108,7 +145,7 @@ position: 0
           </a>
         </div>
         <div class="see-all">
-          <button class="button-any">Смотреть все фотографии</button>
+          <a href="/photos" class="button-any">Смотреть все фотографии</a>
         </div>
       </div>
     </div>
@@ -122,7 +159,7 @@ position: 0
         {% for item in contents.testimonials %}{% if forloop.index == 1 %}
           <div class="testimonial-container">
             <div class="photo">
-              <img src="{{ ite.photo.url }}"/>
+              <img src="{{ item.photo.url }}"/>
             </div>
             <div class="name">
               {{ item.name }}
@@ -130,7 +167,7 @@ position: 0
             <div class="message">
               {{ item.message }}
             </div>
-            <button class="button-any">Все отзывы</button>
+            <a href="/testimonials" class="button-any">Все отзывы</a>
           </div>
         {% endif %}{% endfor %}
 

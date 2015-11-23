@@ -1,0 +1,52 @@
+---
+title: "Отзывы"
+slug: testimonials
+is_layout: false
+allow_layout: false
+listed: false
+published: true
+cache_strategy: none
+response_type: text/html
+position: 2
+---
+{% extends 'parent' %}
+{% block 'body' %}
+    <div class="header-container content-page">
+    <div class="header">
+      <div class="container">
+        {% include 'topline' %}
+        {% nav 'content', depth: 2, exclude: nil, icon: false %}
+      </div>
+      <div class="wave-bottom">&nbsp;</div>
+    </div>
+    </div>
+
+    <div class="testimonials-container">
+      <div class="wave-top">&nbsp;</div>
+      {% for item in contents.testimonials %}
+      <div class="container">
+        <div class="quotes-left">
+          {{ 'quotes-left.png' | theme_image_tag }}
+        </div>
+          <div class="testimonial-container">
+            <div class="photo">
+              <img src="{{ item.photo.url }}"/>
+            </div>
+            <div class="name">
+              {{ item.name }}
+            </div>
+            <div class="message">
+              {{ item.message }}
+            </div>
+          </div>
+
+        <div class="quotes-right">
+          {{ 'quotes-right.png' | theme_image_tag }}
+        </div>
+      </div>
+      {% endfor %}
+      <div class="wave-bottom-red">&nbsp;</div>
+    </div>
+    {% include 'footer' %}
+    {% include 'popups' %}
+{% endblock %}
