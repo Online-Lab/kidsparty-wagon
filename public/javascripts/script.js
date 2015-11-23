@@ -13,6 +13,16 @@ $(document).ready(function(){
   // init();
   // $(window).resize(init);
 
+  var showPopup = function($target){
+    $('html, body').css({'overflow': 'hidden', 'height': '100%'});
+    $target.show();
+  };
+
+  var hidePopup = function($target){
+    $('html, body').css({'overflow': 'auto', 'height': 'auto'});
+    $target.hide();
+  };
+
   $(".menu .menu-item").click(function(){
     var $this = $(this);
     var $link = $this.find(".menu-item-link");
@@ -21,15 +31,13 @@ $(document).ready(function(){
   });
 
   $(".trigger-popup").each(function(i, e){
-    $this = $(this);
-    $target = $($this.attr("data-target"));
+    var $this = $(this);
+    var $target = $($this.attr("data-target"));
     $this.click(function(){
-      $('html, body').css({'overflow': 'hidden', 'height': '100%'});
-      $target.show();
+      showPopup($target);
     });
     $target.find(".close-action").click(function(){
-      $('html, body').css({'overflow': 'auto', 'height': 'auto'});
-      $target.hide();
+      hidePopup($target);
     });
   });
 
@@ -43,5 +51,12 @@ $(document).ready(function(){
       });
     }
   });
+
+  var hash = window.location.search;
+  setTimeout(function(){
+    if (hash.indexOf('callorder-success') > -1){
+      showPopup($(".popup-callme-success"));
+    }
+  }, 500);
 
 });
