@@ -1,0 +1,26 @@
+---
+name: Testimonials
+slug: testimonials
+label_field_name: name
+order_by: created_at
+order_direction: asc
+fields:
+- name:
+    label: name
+    type: string
+    required: true
+    unique: false
+    localized: false
+- message:
+    label: message
+    type: text
+    required: true
+    unique: false
+    localized: false
+    text_formatting: html
+- photo:
+    label: photo
+    type: file
+    required: true
+    unique: false
+    localized: false

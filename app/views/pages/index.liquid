@@ -36,10 +36,10 @@ position: 0
         {% nav 'content', depth: 2, exclude: nil, icon: false %}
         <div class="slider-container">
           <div class="slider">
-            <h1>ОРГАНИЗАЦИЯ ДЕТСКИХ ПРАЗДНИКОВ</h1>
-            <h2>Дети веселятся, родители отдыхают</h2>
+            <h1>{% editable_short_text "title1", fixed: true %}ОРГАНИЗАЦИЯ ДЕТСКИХ ПРАЗДНИКОВ{% endeditable_short_text %}</h1>
+            <h2>{% editable_short_text "title2", fixed: true %}Дети веселятся, родители отдыхают{% endeditable_short_text %}</h2>
             <p>
-              Предлагаем организацию и проведение<br/>детских праздников для детей<br/>с года до 12 лет
+              {% editable_short_text "title3", fixed: true %}Предлагаем организацию и проведение<br/>детских праздников для детей<br/>с года до 12 лет{% endeditable_short_text %}
             </p>
           </div>
         </div>
@@ -49,44 +49,24 @@ position: 0
     </div>
     <div class="offers-container">
       <div class="container">
-        <h1>МЫ МОЖЕМ ВАМ ПРЕДЛОЖИТЬ</h1>
+        <h1>{% editable_short_text "offers_title", fixed: true %}МЫ МОЖЕМ ВАМ ПРЕДЛОЖИТЬ{% endeditable_short_text %}</h1>
         <ul class="offer-items">
-          <li>
-            {{ 'offer-1.png' | theme_image_tag }}
-            <p class="color-green">аниматоры</p>
-            <button class="button-any">Подробнее</button>
-          </li><li>
-            {{ 'offer-2.png' | theme_image_tag }}
-            <p class="color-green">шар-сюрприз</p>
-            <button class="button-any">Подробнее</button>
-          </li><li>
-            {{ 'offer-3.png' | theme_image_tag }}
-            <p class="color-green">художественный аквагрим</p>
-            <button class="button-any">Подробнее</button>
-          </li><li>
-            {{ 'offer-4.png' | theme_image_tag }}
-            <p class="color-green">сладкий стол</p>
-            <button class="button-any">Подробнее</button>
-          </li><li>
-            {{ 'offer-5.png' | theme_image_tag }}
-            <p class="color-green">шоу мыльных пузырей</p>
-            <button class="button-any">Подробнее</button>
-          </li><li>
-            {{ 'offer-6.png' | theme_image_tag }}
-            <p class="color-green">дискотека</p>
-            <button class="button-any">Подробнее</button>
-          </li>
+          {% for item in contents.offers %}<li>
+            <img src="{{ item.photo.url }}"/>
+            <p class="color-green">{{ item.name }}</p>
+            <a href="{{ item.link }}" class="button-any">Подробнее</a>
+          </li>{% endfor %}
         </ul>
       </div>
     </div>
     <div class="order-container">
       <div class="wave-top">&nbsp;</div>
       <div class="container">
-        <p class="description">При написании сценария мы опираемся на интересы и<br/>желания ребенка, учитываем психологические особенности возраста</p>
+        <p class="description">{% editable_short_text "order_description", fixed: true %}При написании сценария мы опираемся на интересы и<br/>желания ребенка, учитываем психологические особенности возраста{% endeditable_short_text %}</p>
         <div class="slider-container">
           <div class="slider">
-            <h1>Сделайте заявку на праздник</h1>
-            <h2>прямо сейчас</h2>
+            <h1>{% editable_short_text "order_title1", fixed: true %}Сделайте заявку на праздник{% endeditable_short_text %}</h1>
+            <h2>{% editable_short_text "order_title2", fixed: true %}прямо сейчас{% endeditable_short_text %}</h2>
             <form method="POST" action="{{contents.onlineorders.public_submission_url}}">
               {% csrf_param %}
               <input type="hidden" value="?onlineorder-success" name="success_callback" />
@@ -103,7 +83,7 @@ position: 0
     </div>
     <div class="photogallery-container">
       <div class="container">
-        <h1>ФОТОГАЛЕРЕЯ</h1>
+        <h1>{% editable_short_text "photogallery_title", fixed: true %}ФОТОГАЛЕРЕЯ{% endeditable_short_text %}</h1>
         <div class="left-slider-button">
           <a href="">
             {{ 'left-slider.png' | theme_image_tag }}
@@ -138,18 +118,22 @@ position: 0
         <div class="quotes-left">
           {{ 'quotes-left.png' | theme_image_tag }}
         </div>
-        <div class="testimonial-container">
-          <div class="photo">
-            <img src=""/>
+
+        {% for item in contents.testimonials %}{% if forloop.index == 1 %}
+          <div class="testimonial-container">
+            <div class="photo">
+              <img src="{{ ite.photo.url }}"/>
+            </div>
+            <div class="name">
+              {{ item.name }}
+            </div>
+            <div class="message">
+              {{ item.message }}
+            </div>
+            <button class="button-any">Все отзывы</button>
           </div>
-          <div class="name">
-            Анна
-          </div>
-          <div class="message">
-            отзыв, отзыв, отзыв, отзыв, отзыв, отзыв, отзыв
-          </div>
-          <button class="button-any">Все отзывы</button>
-        </div>
+        {% endif %}{% endfor %}
+
         <div class="quotes-right">
           {{ 'quotes-right.png' | theme_image_tag }}
         </div>

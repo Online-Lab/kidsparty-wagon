@@ -1,0 +1,25 @@
+---
+- "аниматоры":
+    _slug: animatory
+    link: "/"
+    photo: "/samples/offers/animatory/offer-1.png"
+- "шар-сюрприз":
+    _slug: shar-siurpriz
+    link: "/"
+    photo: "/samples/offers/shar-siurpriz/offer-2.png"
+- "художественный аквагрим":
+    _slug: khudozhiestviennyi-akvaghrim
+    link: "/"
+    photo: "/samples/offers/khudozhiestviennyi-akvaghrim/offer-3.png"
+- "сладкий стол":
+    _slug: sladkii-stol
+    link: "/"
+    photo: "/samples/offers/sladkii-stol/offer-4.png"
+- "шоу мыльных пузырей":
+    _slug: shou-mylnykh-puzyriei
+    link: "/"
+    photo: "/samples/offers/shou-mylnykh-puzyriei/offer-5.png"
+- "дискотека":
+    _slug: diskotieka
+    link: "/"
+    photo: "/samples/offers/diskotieka/offer-6.png"

@@ -1,0 +1,25 @@
+---
+name: Offers
+slug: offers
+label_field_name: name
+order_by: created_at
+order_direction: asc
+fields:
+- name:
+    label: name
+    type: string
+    required: true
+    unique: false
+    localized: false
+- link:
+    label: link
+    type: string
+    required: true
+    unique: false
+    localized: false
+- photo:
+    label: photo
+    type: file
+    required: true
+    unique: false
+    localized: false
