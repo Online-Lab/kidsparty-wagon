@@ -1,0 +1,14 @@
+---
+name: Callorders
+description: "Заявки на обратный звонок"
+slug: callorders
+label_field_name: phone
+order_by: created_at
+order_direction: asc
+fields:
+- phone:
+    label: phone
+    type: string
+    required: true
+    unique: false
+    localized: false

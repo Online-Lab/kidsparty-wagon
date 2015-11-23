@@ -269,9 +269,12 @@ published: true
           <div class="slider">
             <h1>Сделайте обратный звонок</h1>
             <h2>прямо сейчас</h2>
-            <form action="">
-              <input type="text" placeholder="Ваш телефон"/>
-              <button class="button-any">ОСТАВИТЬ ЗАЯВКУ</button>
+            <form method="POST" action="{{contents.callorders.public_submission_url}}">
+              {% csrf_param %}
+              <input type="hidden" value="?callorder-success" name="success_callback" />
+              <input type="hidden" value="/callorder-error" name="error_callback" />
+              <input id="content-phone" name="content[phone]" type="text" placeholder="Ваш телефон"/>
+              <button type="submit" class="button-any">ОСТАВИТЬ ЗАЯВКУ</button>
             </form>
           </div>
         </div>

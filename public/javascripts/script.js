@@ -33,4 +33,15 @@ $(document).ready(function(){
     });
   });
 
+  $(".popup-callme").submit(function(e){
+    var phoneInput = $(this).find("#content-phone");
+    var val = phoneInput.val();
+    if (!val) {
+      e.preventDefault();
+      setTimeout(function(){
+        phoneInput.focus();
+      });
+    }
+  });
+
 });
