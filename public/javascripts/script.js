@@ -20,4 +20,17 @@ $(document).ready(function(){
     window.location.href = href;
   });
 
+  $(".trigger-popup").each(function(i, e){
+    $this = $(this);
+    $target = $($this.attr("data-target"));
+    $this.click(function(){
+      $('html, body').css({'overflow': 'hidden', 'height': '100%'});
+      $target.show();
+    });
+    $target.find(".close-action").click(function(){
+      $('html, body').css({'overflow': 'auto', 'height': 'auto'});
+      $target.hide();
+    });
+  });
+
 });

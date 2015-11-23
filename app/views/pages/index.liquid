@@ -22,7 +22,7 @@ published: true
           <div class="right">
             <div class="phone">8-920-472-17-75</div>
             <div class="actions">
-              <button class="callback button-any">Заказать обратный звонок</button>
+              <button class="callback button-any trigger-popup" data-target=".popup-callme">Заказать обратный звонок</button>
             </div>
           </div>
         </div>
@@ -260,6 +260,21 @@ published: true
           {{ 'footer-logo.png' | theme_image_tag }}
           <span class="phone">8 905 122 22 66</span>
         </a>
+      </div>
+    </div>
+    <div class="popup popup-callme">
+      <div class="popup-container">
+        <button class="close-action">X</button>
+        <div class="slider-container">
+          <div class="slider">
+            <h1>Сделайте обратный звонок</h1>
+            <h2>прямо сейчас</h2>
+            <form action="">
+              <input type="text" placeholder="Ваш телефон"/>
+              <button class="button-any">ОСТАВИТЬ ЗАЯВКУ</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </body>
