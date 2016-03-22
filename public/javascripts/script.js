@@ -23,9 +23,9 @@ $(document).ready(function(){
     $target.hide();
   };
 
-  $(".menu .menu-item").click(function(){
+  $("nav li").click(function(){
     var $this = $(this);
-    var $link = $this.find(".menu-item-link");
+    var $link = $this.find("a");
     var href = $link.attr("href");
     window.location.href = href;
   });

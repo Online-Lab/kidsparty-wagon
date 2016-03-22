@@ -1,7 +1,7 @@
 ---
 - "аниматоры":
     _slug: animatory
-    link: "/"
+    link: http://kidspartytambov.ru/content/animatsionnyie-proghrammy
     photo: "/samples/offers/animatory/offer-1.png"
 - "шар-сюрприз":
     _slug: shar-siurpriz
@@ -9,7 +9,7 @@
     photo: "/samples/offers/shar-siurpriz/offer-2.png"
 - "художественный аквагрим":
     _slug: khudozhiestviennyi-akvaghrim
-    link: "/"
+    link: http://kidspartytambov.ru/content/uslughi/akvaghrim
     photo: "/samples/offers/khudozhiestviennyi-akvaghrim/offer-3.png"
 - "сладкий стол":
     _slug: sladkii-stol
@@ -17,7 +17,7 @@
     photo: "/samples/offers/sladkii-stol/offer-4.png"
 - "шоу мыльных пузырей":
     _slug: shou-mylnykh-puzyriei
-    link: "/"
+    link: http://kidspartytambov.ru/content/uslughi/shou-mylnykh-puzyriei
     photo: "/samples/offers/shou-mylnykh-puzyriei/offer-5.png"
 - "дискотека":
     _slug: diskotieka

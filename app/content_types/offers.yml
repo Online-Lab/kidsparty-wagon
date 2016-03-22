@@ -2,7 +2,7 @@
 name: Offers
 slug: offers
 label_field_name: name
-order_by: created_at
+order_by: manually
 order_direction: asc
 fields:
 - name:

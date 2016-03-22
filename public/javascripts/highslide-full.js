@@ -6,6 +6,7 @@
  * Support: www.highslide.com/support
  * License: www.highslide.com/#license
  */
+
 if (!hs) { var hs = {
 // Language strings
 lang : {
@@ -3318,3 +3319,4 @@ hs.addEventListener(document, 'ready', hs.setClickEvents);
 hs.addEventListener(window, 'load', hs.preloadImages);
 hs.addEventListener(window, 'load', hs.preloadAjax);
 }
+;
